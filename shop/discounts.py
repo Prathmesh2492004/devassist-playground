@@ -13,4 +13,5 @@ def apply_codes(cart: Cart, codes=[]) -> float:
 
 
 def price_per_item(cart: Cart) -> float:
+    """The average price of one item in the cart."""
     return cart.total() / len(cart.items)
