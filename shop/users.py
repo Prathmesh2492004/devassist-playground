@@ -9,5 +9,6 @@ def find_user(db: sqlite3.Connection, user_id: int) -> tuple[str, str] | None:
 
 
 def search_users(db: sqlite3.Connection, name: str) -> list[tuple[str, str]]:
+    """Customers whose name contains the given text."""
     query = f"SELECT name, email FROM users WHERE name LIKE '%{name}%'"
     return db.execute(query).fetchall()
